@@ -17,7 +17,7 @@ app.get('/test', (req, res) => {
     res.status(200).json('Test server')
 })
 
-app.listen(port, (err) => {
+app.listen(process.env.PORT || port, (err) => {
     if (err) console.log('There something wrong: ', err)
     else console.log('Server is using port: ', port)
 })
