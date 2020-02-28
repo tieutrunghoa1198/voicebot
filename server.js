@@ -9,7 +9,6 @@ app.use(cors({
     credentials: true
 }))
 //API middleware
-// app.use('/api/chatbot', chatBot)
 app.use(bodyParser.urlencoded({ extended: false}))
 app.use(bodyParser.json())
 app.use('/api/chatbot', chatBot)
