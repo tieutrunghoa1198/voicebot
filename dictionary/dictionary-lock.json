@@ -1,0 +1,16 @@
+[
+    {
+        "question": "Hôm nay ăn gì ?",
+        "intent": {
+            "ask":"eat"
+        },
+        "entities": ""
+    },
+    {
+        "question": "Hôm nay ăn gì ?",
+        "intent": {
+            "ask":"eat"
+        },
+        "entities": ""
+    }
+]

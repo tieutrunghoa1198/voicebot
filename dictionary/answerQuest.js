@@ -1,0 +1,1 @@
+const questData = require('./dictionary-lock.json')

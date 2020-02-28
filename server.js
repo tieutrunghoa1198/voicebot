@@ -12,10 +12,12 @@ app.use(cors({
 // app.use('/api/chatbot', chatBot)
 app.use(bodyParser.urlencoded({ extended: false}))
 app.use(bodyParser.json())
-
+app.use('/api/chatbot', chatBot)
 app.get('/', (req, res) => {
     res.status(200).json('Test server')
 })
+
+// app.post
 
 app.listen(process.env.PORT || port, (err) => {
     if (err) console.log('There something wrong: ', err)
