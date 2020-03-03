@@ -1,0 +1,24 @@
+[
+    {
+        "question": "Bạn tên là gì ?",
+        "intent": {
+            "ask":"name"
+        },
+        "entities": "voiceBot"
+    },
+    {
+        "question": "Hôm nay ăn gì ?",
+        "intent": {
+            "ask":"eat"
+        },
+        "entities": "today"
+    },
+    {
+        "question": "Ngân hàng Vietcombank làm việc lúc mấy giờ .",
+        "intent": {
+            "ask":"time",
+            "bank": "vietcombank"
+        },
+        "entities": "today"
+    }
+]

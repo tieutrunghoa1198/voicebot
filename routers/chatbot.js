@@ -1,6 +1,8 @@
 const express = require('express')
 const chatBot = express.Router()
 const api_key = 'tieutrunghoa.1102'
+const answerController = require('../dictionary/answerQuest')
+
 
 chatBot.use((req, res, next) => {
     next()
@@ -8,14 +10,17 @@ chatBot.use((req, res, next) => {
 
 chatBot.post('/', (req, res) => {
     const { question } = req.body
-    // console.log(req)
-    if (question === 'Hôm nay ăn gì ?')
-        res.status(200).json('Ăn cứt')
-    else if (question !== '')
-        res.json(question)
-    else
-        res.status(404).json('there is no data')
     //bot answer go here 
+    console.log(question)
+    answerController.answer(question)
+        .then(answer => {
+            console.log('success')
+            res.status(200).json(answer)
+        })
+        .catch(err => {
+            console.log(err.msg)
+            res.status(err.err).send(err.msg)
+        })
 })
 
 
