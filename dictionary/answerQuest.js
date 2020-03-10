@@ -16,18 +16,18 @@ const answer = (question) => new Promise((resolve, reject) => {
     else if ( question === questData[4].question) {
         resolve('Chà, có vẻ như bạn chưa đủ độ tuổi để ăn chơi òi, hẹn bạn 1 mùa xuân khác nhé.')
     }
-    // else if ( question === questData[5].question) {
-    //     resolve('')
-    // }
-    // else if ( question === questData[6].question) {
-    //     resolve('')
-    // }
-    // else if ( question === questData[7].question) {
-    //     resolve('')
-    // }
-    // else if ( question === questData[8].question) {
-    //     resolve('')
-    // }
+    else if ( question === questData[5].question) {
+        resolve('Bạn cần phô tô chứng minh thư hoặc hộ khẩu, chứng minh công việc hiện tại và thu nhập của mình nhé.')
+    }
+    else if ( question === questData[6].question) {
+        resolve('Bạn cần Hợp đồng lao động và xác nhận công tác hoặc Bảo hiểm y tế nhé.')
+    }
+    else if ( question === questData[7].question) {
+        resolve('Bạn cần Sao kê lương, xác nhận tiền mặt 3 tháng gần nhất hoặc hợp đồng bảo hiểm nhân thọ hoặc thẻ tín dụng nhé.')
+    }
+    else if ( question === questData[8].question) {
+        resolve('Tối đa là 500 triệu nhé.')
+    }
     // else if ( question === questData[9].question) {
     //     resolve('')
     // }
