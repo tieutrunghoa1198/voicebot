@@ -20,5 +20,21 @@
             "bank": "vietcombank"
         },
         "entities": "today"
+    },
+    {
+        "question": "Vay tiền như thế nào ?",
+        "intent": {
+            "ask":"",
+            "bank": ""
+        },
+        "entities": ""
+    },
+    {
+        "question": "20 tuổi .",
+        "intent": {
+            "ask":"",
+            "bank": ""
+        },
+        "entities": ""
     }
 ]

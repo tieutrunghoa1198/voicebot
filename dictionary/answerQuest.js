@@ -10,6 +10,27 @@ const answer = (question) => new Promise((resolve, reject) => {
     else if ( question === questData[2].question) {
         resolve('Giờ làm việc của vietcombank từ sáng tới khi nào chán thì đóng cửa nhé')
     }
+    else if ( question === questData[3].question) {
+        resolve('Bạn bao nhiêu tuổi nhỉ ?')
+    }
+    else if ( question === questData[4].question) {
+        resolve('Chà, có vẻ như bạn chưa đủ độ tuổi để ăn chơi òi, hẹn bạn 1 mùa xuân khác nhé.')
+    }
+    // else if ( question === questData[5].question) {
+    //     resolve('')
+    // }
+    // else if ( question === questData[6].question) {
+    //     resolve('')
+    // }
+    // else if ( question === questData[7].question) {
+    //     resolve('')
+    // }
+    // else if ( question === questData[8].question) {
+    //     resolve('')
+    // }
+    // else if ( question === questData[9].question) {
+    //     resolve('')
+    // }
     else { 
         const errMsg = {
             msg: 'errMsg',
