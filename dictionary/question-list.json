@@ -70,7 +70,7 @@
         "id": "7"
     },
     {
-        "question": "Mình có thể vay bao nhiêu tiền .",
+        "question": "Mình có thể vay bao nhiêu tiền ?",
         "intent": {
             "ask":"",
             "bank": ""
@@ -79,12 +79,30 @@
         "id": "8"
     },
     {
-        "question": "Chứng minh thu nhập như thế nào ?",
+        "question": "Thủ tục vay như thế nào .",
         "intent": {
             "ask":"",
             "bank": ""
         },
         "entities": "",
         "id": "9"
+    },
+    {
+        "question": "Thủ tục vay như thế nào ?",
+        "intent": {
+            "ask":"",
+            "bank": ""
+        },
+        "entities": "",
+        "id": "10"
+    },
+    {
+        "question": "Mình có thể vay bao nhiêu tiền ?",
+        "intent": {
+            "ask":"",
+            "bank": ""
+        },
+        "entities": "",
+        "id": "11"
     }
 ]
