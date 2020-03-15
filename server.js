@@ -9,13 +9,16 @@ app.use(cors({
     credentials: true
 }))
 //API middleware
+app.use(express.static(__dirname + '/login-form'))
 app.use(bodyParser.urlencoded({ extended: false}))
 app.use(bodyParser.json())
 app.use('/api/chatbot', chatBot)
 app.get('/', (req, res) => {
     res.status(200).json('Test server')
 })
-
+app.get('/login', (req, res) => {
+    res.sendFile(__dirname + '/login-form/index.html')
+})
 // app.post
 
 app.listen(process.env.PORT || port, (err) => {
