@@ -31,7 +31,7 @@ const answer = (question) => new Promise((resolve, reject) => {
     // else if ( question === questData[9].question) {
     //     resolve('')
     // }
-    else { 
+    else {
         const errMsg = {
             msg: 'errMsg',
             err: 500

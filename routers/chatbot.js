@@ -1,7 +1,6 @@
 const express = require('express')
 const chatBot = express.Router()
-const api_key = 'tieutrunghoa.1102'
-const answerController = require('../dictionary/answerQuest')
+const answerController = require('../controller/answerQuest')
 
 
 chatBot.use((req, res, next) => {
@@ -22,8 +21,6 @@ chatBot.post('/', (req, res) => {
             res.status(err.err).send(err.msg)
         })
 })
-
-
 
 /*
     search function to optimize process time 
