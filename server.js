@@ -3,6 +3,7 @@ const app = express()
 const cors = require('cors')
 const chatBot = require('./routers/chatbot')
 const authorize = require('./routers/authApi')
+const userLogin = require('./routers/login')
 const userApi = require('./routers/userApi')
 const bodyParser = require('body-parser')
 const session = require('express-session')
@@ -16,6 +17,7 @@ const mongodb = {
 }
 const port = 8000
 
+
 //mongodb connection
 mongoose.connect(
     mongodb.url,
@@ -25,6 +27,7 @@ mongoose.connect(
         else console.log('Db connect successfully.');
     }
 )
+
 
 // cookie
 app.use(session({
@@ -38,6 +41,7 @@ app.use(session({
     }
 }))
 
+
 // apply cors
 app.use(cors({ 
     origin: true,
@@ -49,17 +53,22 @@ app.use(express.static(__dirname + '/login-form'))
 app.use(bodyParser.urlencoded({ extended: false}))
 app.use(bodyParser.json())
 
+
 //api middleware
-app.use('/api/chatbot', chatBot)
 app.use('/api/authorize', authorize)
+app.use('/api/chatbot', chatBot)
+app.use('/api', userLogin)
 app.use('/userApi', userApi)
+
+
 //test server connection
 app.get('/', (req, res) => {
     res.status(200).json('Test server')
 })
-// app.get('/login', (req, res) => {
-//     res.sendFile(__dirname + '/login-form/index.html')
-// })
+app.get('/login', (req, res) => {
+    res.sendFile(__dirname + '/login-form/index.html')
+})
+
 
 // app.post
 app.listen(process.env.PORT || port, (err) => {

@@ -3,40 +3,18 @@ const userController = require('./userController')
 
 const login = ({ username, password }) =>
     new Promise((resolve, reject) => {
+        console.log(username)
         userController
-            .getUserForAuth(username)
+            .getUserForAuth(username) //send in4 to mongodb model to find username
             .then(user => {
-                if (!user || !user.password) {
-                    reject({
-                        status: 400,
-                        err: "Incorrect username"
-                    });
-                }
-                else {
-                    bcrypt
-                        .compare(password, user.password)
-                        .then(result => {
-                            if (result) {
-                                resolve({ username: user.username, id: user._id });
-                            } 
-                            else {
-                                reject({
-                                    status: 400,
-                                    err: "Incorrect password"
-                                });
-                            }
-                        })
-                        .catch(err =>
-                            reject({
-                                status: 501,
-                                err: err
-                            })
-                        );
-                }
+                resolve({
+                    username: user.username,
+                    id: user._id
+                })
             })
-            .catch(err =>
+            .catch(err => // cannot find 
                 reject({
-                    status: 501,
+                    status: 502,
                     err: err
                 })
             );

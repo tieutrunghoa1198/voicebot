@@ -2,14 +2,17 @@ const express = require('express')
 const loginApi = express.Router()
 const loginController = require('../controller/loginController')
 
-loginApi.post("/", (req, res) => {
+loginApi.post("/login", (req, res) => {
     loginController
         .login(req.body)
         .then(userInfo => {
             req.session.userInfo = userInfo;
             res.send(userInfo);
         })
-        .catch(error => res.status(error.status).send(error.err));
+        .catch(error =>
+            res
+                .status(error.status)
+                .send(error.err));
 });
 
 loginApi.delete("/", (req, res) => {

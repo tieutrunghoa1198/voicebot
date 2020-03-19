@@ -5,7 +5,6 @@ const userModel = require('../models/userModel')
 
 authApi.post('/', (req, res) => {
     const { username, password } = req.body
-
     userModel
         .findOne({ username })
         .then(userFound => {

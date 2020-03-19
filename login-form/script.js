@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:8080/api/auth/login"
+const apiUrl = "http://localhost:8000/api/authorize"
 $('#loginForm').on('submit', function (event) {
     event.preventDefault()
     const username = $('#inputEmail').val()

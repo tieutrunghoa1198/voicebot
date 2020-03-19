@@ -49,7 +49,8 @@ const updatePass = (id, pass) =>
 
 const getUserForAuth = username =>
     new Promise((resolve, reject) => {
-        userModels
+        console.log(username)
+        userModel
             .findOne({ username })
             .select("username password _id")
             .then(user => resolve(user))
