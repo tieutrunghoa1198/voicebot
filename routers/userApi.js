@@ -13,7 +13,7 @@ userApi.use((req, res, next) => {
 })
 
 //create new user 
-userApi.post('/', (req, res) => {
+userApi.post('/create', (req, res) => {
     userController
         .createUser(req.body)
         .then(data => {

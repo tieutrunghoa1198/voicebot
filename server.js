@@ -2,8 +2,7 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const chatBot = require('./routers/chatbot')
-const authorize = require('./routers/authApi')
-const userLogin = require('./routers/login')
+const authorizeLogin = require('./routers/authorizeLogin')
 const userApi = require('./routers/userApi')
 const bodyParser = require('body-parser')
 const session = require('express-session')
@@ -55,9 +54,8 @@ app.use(bodyParser.json())
 
 
 //api middleware
-app.use('/api/authorize', authorize)
 app.use('/api/chatbot', chatBot)
-app.use('/api', userLogin)
+app.use('/api', authorizeLogin)
 app.use('/userApi', userApi)
 
 

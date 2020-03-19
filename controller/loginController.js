@@ -7,15 +7,21 @@ const login = ({ username, password }) =>
         userController
             .getUserForAuth(username) //send in4 to mongodb model to find username
             .then(user => {
-                resolve({
-                    username: user.username,
-                    id: user._id
+                if(bcrypt.compareSync(password, user.password)) {
+                    resolve({
+                        username: user.username,
+                        id: user._id
+                    })
+                }
+                else reject({
+                    status: 400,
+                    err: "Incorrect password."
                 })
             })
             .catch(err => // cannot find 
                 reject({
                     status: 502,
-                    err: err
+                    err: "Cannot find user."
                 })
             );
     });

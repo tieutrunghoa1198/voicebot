@@ -7,7 +7,7 @@ loginApi.post("/login", (req, res) => {
         .login(req.body)
         .then(userInfo => {
             req.session.userInfo = userInfo;
-            res.send(userInfo);
+            res.send('Login successfully!');
         })
         .catch(error =>
             res
