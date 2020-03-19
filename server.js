@@ -53,6 +53,13 @@ app.use(bodyParser.urlencoded({ extended: false}))
 app.use(bodyParser.json())
 
 
+app.use((req, res, next) => {
+    console.log('SESSIONID: ', req.sessionID);
+    console.log('SESSION: ', req.session);
+    next()
+})
+
+
 //api middleware
 app.use('/api/chatbot', chatBot)
 app.use('/api', authorizeLogin)
