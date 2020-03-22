@@ -10,7 +10,8 @@ const login = ({ username, password }) =>
                 if(bcrypt.compareSync(password, user.password)) {
                     resolve({
                         username: user.username,
-                        id: user._id
+                        id: user._id,
+                        isLogin: true
                     })
                 }
                 else reject({
@@ -20,8 +21,9 @@ const login = ({ username, password }) =>
             })
             .catch(err => // cannot find 
                 reject({
+                    isLogin: false,
                     status: 502,
-                    err: "Cannot find user."
+                    err: "Cannot find user: " + err
                 })
             );
     });

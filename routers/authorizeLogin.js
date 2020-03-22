@@ -10,9 +10,7 @@ loginApi.post("/login", (req, res) => {
             res.send('Login successfully!');
         })
         .catch(error =>
-            res
-                .status(error.status)
-                .send(error.err));
+            res.status(error.status).send(error.err));
 });
 
 loginApi.delete("/", (req, res) => {
