@@ -28,9 +28,6 @@ const answer = (question) => new Promise((resolve, reject) => {
     else if ( question === questData[8].question) {
         resolve('Tối đa là 500 triệu nhé.')
     }
-    // else if ( question === questData[9].question) {
-    //     resolve('')
-    // }
     else {
         const errMsg = {
             msg: 'errMsg',
@@ -40,6 +37,11 @@ const answer = (question) => new Promise((resolve, reject) => {
     }
 })
 
+const newAnswerAlgorithm = (question) => {
+
+}
+
 module.exports = { 
-    answer
+    answer,
+    newAnswerAlgorithm
 }
