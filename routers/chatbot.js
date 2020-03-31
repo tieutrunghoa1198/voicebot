@@ -23,6 +23,7 @@ chatBot.post('/', (req, res) => {
 })
 
 /*
+    - QUARANTINE TIME
     search function to optimize process time 
     use binary search 
     set up a question list contains: 
